@@ -1,0 +1,12 @@
+Question:
+You have to explain how you have achieved the θ(n) for the best-case scenario in
+a comment block of your code.
+
+Answer:
+Bubble Sort – Best Case Complexity.
+When the array is already sorted, no swapping is required. 
+The boolean flag 'swapped' stays false during the first pass. 
+The algorithm detects this and breaks immediately, so only one pass is done.
+
+Comparisons = n-1, Swaps = 0
+Therefore, time complexity in this case is θ(n).
