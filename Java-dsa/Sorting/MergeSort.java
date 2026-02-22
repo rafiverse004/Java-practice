@@ -1,5 +1,7 @@
+import java.io.*;
+
 public class MergeSort {
-    // Conquer
+    
     public static void conquer(int arr[], int si, int mid, int ei){
         int merged[] = new int[ei - si + 1];
 
@@ -26,7 +28,6 @@ public class MergeSort {
 
     }
 
-    // Divide
     public static void divide(int arr[], int si, int ei){
         if(si >= ei){
             return;
@@ -37,13 +38,30 @@ public class MergeSort {
         conquer(arr, si, mid, ei);
     }
     public static void main(String args[]){
-        int arr[] = {6, 3, 9, 5, 2, 8};
-        int n = arr.length;
+        try(
+            BufferedReader br = new BufferedReader(new FileReader("input2.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("output2.txt"));
+        ) {
+            int n = Integer.parseInt(br.readLine());
+            int arr[] = new int[n];
 
-        divide(arr, 0, n-1);
-        for(int i=0; i<n; i++){
-            System.out.println(arr[i] + " ");
+            String Numbers[] = br.readLine().split(" ");
+            for(int i=0; i<n; i++){
+                arr[i] = Integer.parseInt(Numbers[i]);
+            }
+
+            divide(arr, 0, n-1);
+            for(int i=0; i<n; i++){
+                bw.write(arr[i] + " ");
+            }
+            System.out.println("MergeSort done. Check input2.txt");
+            
+            bw.newLine();
+            br.close();
+            bw.close();
+
+        } catch(IOException e) {
+            System.out.println("IOException error: " + e.getMessage());
         }
-        System.out.println();
     }
 }

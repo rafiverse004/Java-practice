@@ -31,7 +31,7 @@ public class Task2 {
         return mergedArray;
     }
 
-    static void writeArray(int[] arr, BufferedWriter bw) throws IOException {
+    public static void writeArray(int[] arr, BufferedWriter bw) throws IOException {
         for (int num : arr) {
             bw.write(num + " ");
         }
