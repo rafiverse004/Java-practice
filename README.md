@@ -62,7 +62,7 @@ java-practice/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/rafiverse004/java-practice.git
+git clone https://github.com/rafiverse004/Java-practice.git
 cd java-practice
 ```
 
